@@ -11,9 +11,14 @@ pipeline {
 			steps { sh 'go run math/math.go'}
 			}
 		
-		stage ('Test unit') {
+		stage ('Tests') {
 			steps {sh 'go test -v math/'}
 		}
+		stage ('Test Coverage') {
+                        steps {sh 'go test -coverprofile=coverage.out math/' sh 'go tool cover -html=coverage.out math/'}
+                }
+		
+
 	}
 }
 
