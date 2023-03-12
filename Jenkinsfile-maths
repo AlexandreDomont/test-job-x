@@ -12,9 +12,10 @@ pipeline {
 				sh 'go run math/math.go'
 				}
 			}
-		}
+		
 		stage ('Test unit') {
 			steps {go test math/}
 		}
+	}
 }
 
