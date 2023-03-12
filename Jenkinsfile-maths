@@ -17,11 +17,14 @@ pipeline {
 		stage ('Test Coverage') {
                         steps {
 				sh 'go test -coverprofile=coverage.out math/' 
-				sh 'go tool cover -html=coverage.out'
+				sh 'go tool cover -html=coverage.out -o cover.html'
 			}
                 }
 		
 
+	}
+	post {
+		always {archiveArtifacts artifacts: '*.html', fingerprint: true }
 	}
 }
 
