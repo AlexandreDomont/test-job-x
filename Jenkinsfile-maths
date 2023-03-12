@@ -8,13 +8,11 @@ pipeline {
 	}
 	stages {
 		stage('Build') {
-			steps {
-				sh 'go run math/math.go'
-				}
+			steps { sh 'go run math/math.go'}
 			}
 		
 		stage ('Test unit') {
-			steps {go test math/}
+			steps {sh 'go test math/'}
 		}
 	}
 }
