@@ -24,6 +24,7 @@ pipeline {
 
 	}
 	post {
+		// record artifact coverage 
 		always {archiveArtifacts artifacts: '*.html', fingerprint: true }
 	}
 }
