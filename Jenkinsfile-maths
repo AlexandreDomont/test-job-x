@@ -17,7 +17,7 @@ pipeline {
 		stage ('Test Coverage') {
                         steps {
 				sh 'go test -coverprofile=coverage.out math/' 
-				sh 'go tool cover -html=coverage.out math/'
+				sh 'go tool cover -html=coverage.out'
 			}
                 }
 		
