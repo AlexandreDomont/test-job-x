@@ -24,10 +24,6 @@ pipeline {
                         echo "Me in stage two"
                     }
                 }
-                stage('Stage three') {
-                    agent {
-                        label "Stage Three"
-                    }
                 }
             }
         }
